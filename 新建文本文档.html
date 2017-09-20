@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head></head>
+<body>
+<canvas id="canvas" width="500" height="500" style = "border:1px solid red"></canvas>
+<script>
+var rect={x:100,y:100,w:40,h:20};//定义要画的矩形的位置属性
+var canvas=document.getElementById('canvas');
+var cxt=canvas.getContext('2d');
+cxt.fillRect(rect.x,rect.y,rect.w,rect.h);//绘制矩形
+canvas.onclick=function(e){//给canvas添加点击事件
+    e=e||event;//获取事件对象
+    //获取事件在canvas中发生的位置
+    var x=e.clientX-canvas.offsetLeft;
+    var y=e.clientY-canvas.offsetTop;
+
+   console.log(x+","+y);
+}
+</script>
+</body>
+</html>
